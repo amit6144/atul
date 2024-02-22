@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Screen</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+            {{message}}
+            <form action="/" method="post" enctype="multipart/form-data">
+                <h2>Login to your account</h2>
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required placeholder="Your Email">
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" required placeholder="Your Password">
+            </div>
+            
+            <div class="checkbox">
+                <label for="remember">
+                    <input type="checkbox" name="remember" id="remember"> Remember Me
+                </label>
+            </div>
+            <button type="submit">Login</button>
+            </form>
+            <p>New to MyApp? <a href="{{ url_for('signup') }}">Sign Up</a>
+
+       
+    </div>
+</body>
+</html>

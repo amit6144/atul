@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigation Menu</title>
+    <link rel="stylesheet" href="/static/css/sidebar.css">
+    <!-- Font Awesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #D96AA7;
+    --secondary-color: #230956;
+    --complimentary-color: #88BFB5;
+    --contrast-color: #F2E527;
+    --light-color: #D2A9D9;
+}
+.wrapper {
+    display: flex;
+    width: 100%;
+  }
+  .sidebar {
+    width: 150px;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+
+.container {
+    background: #191919;
+    min-height: 100vh;
+    font-family: Montserrat, sans-serif;
+}
+
+nav a {
+    font-size: 40px;
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center; /* Align icon vertically */
+}
+nav a i {
+    margin-top: -12px; /* Adjust the negative margin to move the icons up */
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: var(--secondary-color);
+}
+
+section {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    opacity: 0;
+    transition: all ease-in .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section h1 {
+    color: #fff;
+    font-size: 50px;
+    text-transform: uppercase;
+    opacity: 0;
+}
+
+/* Styles applied on trigger */
+section:target {
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+section:target h1 {
+    opacity: 0;
+    animation: 2s fadeIn forwards .5s;
+}
+
+#first {
+    background: var(--primary-color);
+}
+
+#second {
+    background: var(--complimentary-color);
+}
+
+#third {
+    background: var(--contrast-color);
+}
+
+#fourth {
+    background: var(--light-color);
+}
+
+@keyframes fadeIn {
+    100% { opacity:1 }
+}
+
+nav a:first-child img {
+    width: 39px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+    background-color: white;
+    padding: 4px; /* Add padding to create space around the image */
+    border-radius: 15px;
+    margin-top: 5px;
+
+}
+nav a:nth-child(2) i {
+    font-size: 34px; /* Adjust the font size as needed */
+}
+nav a:nth-child(3) img {
+   /* Adjust the width as needed */
+    padding: 5px;
+    width: 20px;
+
+}
+nav a:nth-child(4) img {
+    padding: 5px;
+    width: 20px; /* Adjust the font size as needed */
+}
+
+
+.profile-link img {
+
+    font-size: 10px;
+    height: 42px;
+    border-radius: 40%; /* Make it round */
+   /* Adjust margin to position it lower */
+}
+nav a:nth-child(5) img {
+    /* Styles specific to the fifth link */
+    /* Example background color */
+    margin-top: 380px;
+    border-radius: 30px; /* Example border radius */
+    /* Example padding */
+    color: #333;
+}
+
+.conversation-column {
+    display: none; /* Initially hide the conversation column */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Position it to the right of the nav */
+    width: 200px; /* Adjust width as needed */
+    background-color: #f0f0f0;
+    padding: 10px;
+    z-index: 10;
+}
+
+.conversation-column {
+    background-color: #f1f1f1;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .conversation-column ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .conversation-column li {
+    margin-bottom: 5px;
+  }
+
+  .conversation-column a {
+    text-decoration: none;
+    color: #333;
+  }
+
+</style>
+<body>
+    <nav>
+        <a href="#first"><img src="assets/hero.png" alt="Logo"></a>
+        <a href="#second"><i class="fas fa-inbox"></i></a>
+        <a href="#third"><i class="fa fa-user"></i></a>
+        <a href="#fourth"><i class="fas fa-chart-line"></i></a>
+        <a href="login.html" class="profile-link"><img src="assets/avatar.jpg" alt="Profile"></a>
+
+        <div class="conversation-column">
+            <h2>Conversations</h2>
+            <ul>
+              <li><a href="#">Amit RG</a></li>
+              <li><a href="#">Hiten Saxena</a></li>
+            </ul>
+          </div>
+    </nav>
+
+
+    <div class="container">
+        <section id="first">
+            <h1>First</h1>
+        </section>
+
+        <section id="second">
+            <h1>Second</h1>
+        </section>
+
+        <section id="third">
+            <h1>Third</h1>
+        </section>
+
+        <section id="fourth">
+            <h1>Fourth</h1>
+        </section>
+
+    </div>
+</body>
+</html>
